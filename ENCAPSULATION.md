@@ -1,57 +1,45 @@
-# Exp.No:30  
-## COUNTER CLASS
+# Exp.No:29  
+## Encapsulation
 ---
 ### AIM  
-To create an abstract class `Payment` with an abstract method `payment`. Create two subclasses `CreditCardPayment` and `MobileWalletPayment` which implement the abstract method. Invoke the method using the objects of the subclasses.
+To create an `Employee` class by defining employee attributes such as `name` and `salary` as instance variables and implementing behavior using `work()` and `show()` instance methods.
 
 ---
 ### ALGORITHM
 1. Begin the program.  
-2. Import the `ABC` class and `abstractmethod` from the `abc` module.  
-3. Define the abstract class `Payment` that inherits from `ABC`.  
-   - Define an abstract method `payment(self, amount)` with no implementation.  
-4. Define the `CreditCardPayment` class that inherits from `Payment`.  
-   - Implement the `payment(self, amount)` method to print the credit card payment details and return `True`.  
-5. Define the `MobileWalletPayment` class that inherits from `Payment`.  
-   - Implement the `payment(self, amount)` method to print the mobile wallet payment details and return `True`.  
-6. Create objects of `CreditCardPayment` and `MobileWalletPayment`.  
-7. Call the `payment()` method on each object and print the result.  
-8. Terminate the program.
+2. Define the `Employee` class.  
+3. Inside the `Employee` class, define the `__init__` method to initialize `name` and `salary` as instance variables.  
+4. Define the `show()` method to print the `name` and `salary` of the employee.  
+5. Define the `work()` method to print the work details of the employee.  
+6. Create an object of the `Employee` class with the name `'Jessa'` and salary `8000`.  
+7. Call the `show()` method to display the employee details.  
+8. Call the `work()` method to display the work details.  
+9. Terminate the program.
 
 ---
 ### PROGRAM
 ```python
 # Reg.No- 212222060100
 # Name- Jothivanan T
-from abc import ABC, abstractmethod
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
 
-class Payment(ABC):
-    @abstractmethod
-    def payment(self, amount):
-        pass
+    def show(self):
+        print("Name: ", self.name, "Salary:", self.salary)
 
-class CreditCardPayment(Payment):
-    def payment(self, amount):
-        print("Credit card payment of- ", amount)
-        print("Purchase of amount- ", amount)
-        return True
+    def work(self):
+        print(self.name, "is working on NLP")
 
-class MobileWalletPayment(Payment):
-    def payment(self, amount):
-        print("Mobile wallet payment of- ", amount)
-        print("Purchase of amount- ", amount)
-        return True
-
-obj1 = CreditCardPayment()
-print(obj1.payment(100))
-
-obj2 = MobileWalletPayment()
-print(obj2.payment(200))
+emp = Employee("Jessa", 8000)
+emp.show()
+emp.work()
 ```
 
 ### OUTPUT
-<img width="664" height="209" alt="image" src="https://github.com/user-attachments/assets/bb7c52d4-8b96-4b8a-814c-27667d153d3d" />
+<img width="558" height="192" alt="image" src="https://github.com/user-attachments/assets/624500ea-2b4e-47aa-ba27-ecb4f1873ef8" />
 
 
 ### RESULT
-Thus, the Python program to create an abstract class `Payment` with subclasses `CreditCardPayment` and `MobileWalletPayment` has been successfully executed and the output is verified.
+Thus, the Python program to create an `Employee` class with instance variables and instance methods has been successfully executed and the output is verified.
